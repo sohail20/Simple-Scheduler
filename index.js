@@ -79,7 +79,7 @@ app.post('/api/insertUser', (req, res) => {
     })
 });
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
     console.log(`Server listening on the port::${port}`);
     //Creating table users if not exists
     var sql = "CREATE TABLE IF Not EXISTS users (id INT AUTO_INCREMENT PRIMARY KEY,firstName VARCHAR(255), lastName VARCHAR(255),email VARCHAR(255) UNIQUE NOT NULL,gender VARCHAR(255),birth VARCHAR(255))";
